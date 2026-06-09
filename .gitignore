@@ -1,0 +1,18 @@
+# Secrets / local runtime
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+secrets/
+auth/
+logs/
+backups/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

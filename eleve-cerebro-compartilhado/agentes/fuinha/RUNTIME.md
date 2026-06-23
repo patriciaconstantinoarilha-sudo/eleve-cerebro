@@ -25,8 +25,19 @@
 - Codex OAuth: autenticado em `/opt/eleve-hermes-fuinha/home/auth.json`, dono `fuinha`, modo `600`.
 - Sem `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, `ANTHROPIC_API_KEY` ou `NOUS_API_KEY` no env-file Fuinha.
 - Composio disponivel por env-file root-only.
-- Telegram removido do env-file ativo por blocker de token compartilhado.
+- Telegram dedicado configurado por referencia de cofre: `telegram bot token - fuinha`, vault `Eleve Operacao`.
 
-## Pendencia critica
+## Systemd
 
-Criar ou registrar no cofre um bot/token Telegram dedicado da Fuinha. O token testado tinha hash identico ao token usado pelo OpenClaw Eleve, gerando conflito de polling e violando isolamento de canal.
+- Unit: `/etc/systemd/system/hermes-fuinha.service`
+- Estado pos-smoke: `disabled` e `inactive`.
+- `TimeoutStopSec=240`.
+- `KillSignal=SIGINT` para parada limpa do Hermes gateway.
+- `NoNewPrivileges=true`, `ProtectSystem=full`, `ProtectHome=true`, `ReadWritePaths=/opt/eleve-hermes-fuinha /tmp`, `UMask=0077`.
+
+## Pendencias de handoff
+
+- Patrick deve definir primeira fonte autorizada de pesquisa/scraping.
+- Patrick deve definir politica de armazenamento e retencao para transcricao bruta real.
+- Recorrencia automatica depende de frequencia, fontes, limites e revisor aprovados.
+- Mensagem real no Telegram depende de aprovacao explicita de ativacao.

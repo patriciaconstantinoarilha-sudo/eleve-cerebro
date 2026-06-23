@@ -22,10 +22,11 @@
 
 - Provider: OpenAI Codex
 - Modelo default: `gpt-5.5`
+- Codex OAuth: autenticado em `/opt/eleve-hermes-fuinha/home/auth.json`, dono `fuinha`, modo `600`.
 - Sem `OPENAI_API_KEY`, `OPENROUTER_API_KEY`, `ANTHROPIC_API_KEY` ou `NOUS_API_KEY` no env-file Fuinha.
-- Telegram configurado por env-file root-only.
 - Composio disponivel por env-file root-only.
+- Telegram removido do env-file ativo por blocker de token compartilhado.
 
 ## Pendencia critica
 
-Codex OAuth ainda nao foi autenticado. O arquivo esperado e `/opt/eleve-hermes-fuinha/home/auth.json`. A autenticacao deve ser feita de modo interativo/controlado e nao pode ser substituida por fallback invisivel de chave de API.
+Criar ou registrar no cofre um bot/token Telegram dedicado da Fuinha. O token testado tinha hash identico ao token usado pelo OpenClaw Eleve, gerando conflito de polling e violando isolamento de canal.

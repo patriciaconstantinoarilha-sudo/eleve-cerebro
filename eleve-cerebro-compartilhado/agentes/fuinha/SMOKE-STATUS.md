@@ -28,3 +28,10 @@ Status geral: bootstrap tecnico aprovado para handoff/ativacao controlada. Servi
 - Nao houve envio real de mensagem ao Patrick.
 - Nao salvar transcricao bruta real ate Patrick definir politica de retencao.
 - Nao usar fontes logadas, pagas, protegidas ou cursos sem autorizacao explicita.
+
+## Ativacao real, 2026-06-23
+
+- Iygge autorizou liberar a Fuinha para Patrick interagir no Telegram.
+- `hermes-fuinha.service` foi habilitado e iniciado.
+- Estado validado: `active (running)` e `enabled`.
+- OpenClaw Eleve permaneceu saudavel.
